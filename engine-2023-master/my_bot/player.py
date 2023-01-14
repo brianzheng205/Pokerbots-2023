@@ -6,6 +6,7 @@ from skeleton.states import GameState, TerminalState, RoundState
 from skeleton.states import NUM_ROUNDS, STARTING_STACK, BIG_BLIND, SMALL_BLIND
 from skeleton.bot import Bot
 from skeleton.runner import parse_args, run_bot
+import random
 
 
 class Player(Bot):
@@ -130,7 +131,9 @@ class Player(Bot):
             max_cost = max_raise - my_pip
             min_cost = min_raise - my_pip
 
-            my_action = RaiseAction(min_raise)
+            my_action = RaiseAction(max_raise)
+        elif (RauseAction in legal_actions and random.random() < 0.25):
+            my_action = RaiseAction(min_raise * 2)
         elif CallAction in legal_actions: # if we can call, do so
             my_action = CallAction()
         else:
