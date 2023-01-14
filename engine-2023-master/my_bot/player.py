@@ -175,9 +175,9 @@ class Player(Bot):
         
         if RaiseAction in legal_actions and self.strong_hole: # only consider raising if the hand we have is strong
             my_action = RaiseAction(max_raise)
-        elif RauseAction in legal_actions and random.random() < 0.25: # sometimes randomly raise by twice the min raise
+        elif RaiseAction in legal_actions and random.random() < 0.25: # sometimes randomly raise by twice the min raise
             my_action = RaiseAction(min_raise * 2)
-        elif RauseAction in legal_actions and random.random() < 0.04: # let's go all in
+        elif RaiseAction in legal_actions and random.random() < 0.04: # let's go all in
             my_action = RaiseAction(max_raise)
         else:
             pot_total = my_contribution + opp_contribution
