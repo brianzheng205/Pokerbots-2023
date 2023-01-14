@@ -61,7 +61,7 @@ class Player(Bot):
 
         return False
     
-     def calc_strength(self, hole, iterations):
+    def calc_strength(self, hole, iterations):
         '''
         
         
